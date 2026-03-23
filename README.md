@@ -48,6 +48,8 @@ Step 7: Ensemble Decision
 
 Step 8: Degradation Trend Analysis
 
+### Colab and jupyter is preferable only.
+
 
 ## ⚙️ Technical Pipeline
 
