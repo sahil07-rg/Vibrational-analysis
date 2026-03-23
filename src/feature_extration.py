@@ -1,3 +1,6 @@
+import numpy as np
+from scipy.signal import welch
+from scipy.stats import kurtosis
 def extract_features(segment, Fs):
     all_features = []
 
