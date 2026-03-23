@@ -1,117 +1,119 @@
 # Ensemble Anomaly Detection for Vibration-Based Predictive Maintenance
 
-🚀 Multi-model ML + Signal Processing for Gas Turbine Health Monitoring
+🚀 Multi-Channel Signal Fusion + Adaptive ML for Gas Turbine Health Monitoring
 
 ## 🔬 Project Overview
 
-This project implements an end-to-end vibration signal processing and anomaly detection pipeline designed for gas turbine health monitoring applications. The objective is to transform high-frequency vibration signals into structured feature representations and apply unsupervised machine learning concepts for early anomaly detection.
+This project presents an end-to-end vibration signal processing and anomaly detection framework for predictive maintenance of rotating machinery, particularly gas turbine systems.
 
-The system architecture reflects methodologies used in aerospace propulsion diagnostics, where fault-labelled datasets are scarce and condition-based monitoring is critical. The pipeline is inspired by real-world engineering workflows applicable to gas turbine systems such as those developed at GTRE.
+The system transforms high-frequency multi-channel vibration signals into structured feature representations and applies unsupervised machine learning to detect early-stage faults without requiring labeled data.
+
+Unlike conventional approaches, this work introduces:
+
+•	Multi-channel sensor fusion
+
+•	Adaptive weighted ensemble anomaly detection
+
+•	Continuous anomaly scoring for degradation analysis
 
 ## 💡 Why This Project Matters
 
 • Detects early-stage faults in rotating machinery  
+
 • Works without labeled data (unsupervised learning)  
+
 • Combines multiple ML models for reliability  
-• Inspired by real aerospace diagnostic systems (GTRE/DRDO)
+
+• Inspired by real aerospace diagnostic systems
+
+• Introduces adaptive ensemble intelligence
 
 ## 🎯 Problem Statement
 
-Gas turbine engines operate under extreme thermo-mechanical stresses. Early-stage faults in compressors, turbines, bearings, or shafts often manifest as subtle changes in vibration signatures. Traditional threshold-based monitoring methods may not detect these deviations effectively.
+Gas turbine engines operate under extreme thermo-mechanical stresses. Early faults manifest as subtle changes in vibration patterns across multiple sensors.
+
+Traditional methods:
+
+• Use single-channel signals
+
+• Rely on fixed thresholds
+
+• Fail to capture early degradation
 
 This project addresses:
 
-•	High-frequency vibration signal of multi channel receivers processing
+• Multi-channel vibration signal processing
 
-•	Statistical and spectral feature engineering
+• Feature-level sensor fusion
 
-•	ML-ready dataset construction
+• Unsupervised anomaly detection
 
-•	Unsupervised anomaly detection logic and training
-
+• Degradation-aware monitoring
 
 ## 🏗️ System Architecture
 
-Step 1: Raw Vibration Signal Acquisition
+1.	Raw Multi-Channel Signal Acquisition
 
-Step 2: Window-Based Signal Segmentation (1 sec @ 20480 Hz)
+2.	Window-Based Segmentation (1 sec @ 20480 Hz)
 
-Step 3: Time & Frequency Domain Feature Extraction
+3.	Multi-Channel Feature Extraction
 
-Step 4: Feature Vector Aggregation → Feature Matrix (X)
+4.	Feature Fusion → High-Dimensional Feature Matrix
 
-Step 5: Feature Matrix Construction
+5.	Feature Scaling
 
-Step 6: Multi-Model Anomaly Detection
+6.	Multi-Model Anomaly Detection
 
-Step 7: Ensemble Decision
+7.	Adaptive Weighted Ensemble
 
-Step 8: Degradation Trend Analysis
-
-### Colab and jupyter is preferable only.
+8.	Degradation Trend Analysis
 
 
 ## ⚙️ Technical Pipeline
 
 
-### 1️⃣ Signal Segmentation
+1️⃣ Signal Segmentation
 
-•	Sampling Rate: 20,480 Hz
+• Sampling Rate: 20,480 Hz
 
-•	Window Size: 1 second (20480 samples)
+• Window Size: 1 second
 
-•	Non-overlapping segmentation	
+• Non-overlapping segmentation
 
-	
-	for start in range(0, len(sig2) - window_size + 1, window_size):
-  	segment = sig2[start:start + window_size]
-	segments.append(segment)
+2️⃣ Multi-Channel Feature Engineering
 
-### 2️⃣ Feature Engineering
+Features are extracted per channel and fused:
 
+Time-Domain Features:-
 
-### Extracted features include:
+• RMS
 
+• Standard Deviation
 
-### Time-Domain Features
+• Kurtosis
 
-•	Root Mean Square (RMS)
-	
-•	Standard Deviation
+• Crest, Shape, Impulse, Clearance Factors
 
-•	Kurtosis
+Frequency-Domain Features:-
 
-•	Crest Factor
+• Spectral Centroid
 
-•	Shape Factor
+• Bandwidth
 
-•	Impulse Factor
+• Spectral Flatness
 
-•	Clearance Factor
+• Spectral Entropy
 
-### Frequency-Domain Features
+• Band Power
 
-•	Power Spectral Density (Welch Method)
+👉 This enables:
 
-•	Spectral Centroid
+• Cross-sensor fault detection
 
-•	Spectral Bandwidth
+• Improved system representation
 
-•	Spectral Flatness
+• Higher sensitivity to subtle faults
 
-•	Spectral Entropy
-
-•	Band Power (Selected Frequency Bands)
-
-### These features capture:
-
-•	Energy variations
-
-•	Impulsive behavior
-
-•	Frequency shifts
-
-•	Structural degradation indicators
 
 ### 3️⃣ Dataset Construction
 
@@ -148,6 +150,30 @@ Three complementary unsupervised models are used:
 
 • Autoencoder → detects reconstruction anomalies
 
+### 🧠 Proposed Novelty
+
+🔥 1. Multi-Channel Feature Fusion
+
+Instead of single-sensor analysis, this work integrates 8-channel vibration data, enabling richer fault representation and improved robustness.
+
+🔥 2. Adaptive Weighted Ensemble (Core Contribution)
+
+Unlike traditional majority voting:
+	
+	combined = (iso + svm + ae)
+
+This work introduces:
+
+ 	Dynamic weighting based on model anomaly behavior
+
+ Models contribute based on their confidence → more intelligent decision-making.
+
+🔥 3. Continuous Anomaly Scoring
+
+Instead of binary detection:, This project computes:
+
+	Anomaly Score = intensity + frequency of anomalies
+
 ### Core assumption:
 
 Healthy engine behavior forms a cluster in feature space. Deviations from this cluster indicate potential anomalies.
@@ -157,13 +183,6 @@ Healthy engine behavior forms a cluster in feature space. Deviations from this c
 Instead of relying on a single model, a consensus-based approach is used:
 
 	combined = (iso_labels == -1) + (svm_labels == -1) + (ae_labels == -1)
-
-
-A segment is considered anomalous if:
-
-
-	≥ 2 models agree
-
 
 This improves:
 
@@ -190,15 +209,15 @@ This enables:
 
 ### 📊 Key Contributions
 
-•	Designed structured signal segmentation pipeline
+• Multi-channel vibration signal fusion
 
-•	Implemented statistical and spectral feature extraction
+• Adaptive weighted ensemble anomaly detection
 
-•	Built ML-ready feature matrix from raw vibration signals
+• Continuous anomaly scoring mechanism
 
-•	Applied engineering-aligned anomaly detection logic
+• Comparison of anomaly count vs anomaly score
 
-•	Structured project for aerospace propulsion diagnostics context
+• Degradation trend analysis for predictive maintenance
 
 ### 🛠️ Technologies Used
 
@@ -218,15 +237,15 @@ This enables:
 
 ### 🧠 Key Insights
 
-• Single-model anomaly detection is unreliable
+• Single-model detection is unreliable
 
-• Ensemble learning improves robustness and consistency
+• Multi-channel fusion significantly improves robustness
 
-• Weighted anomaly scoring is more informative than simple counts
+• Adaptive ensemble outperforms majority voting
 
-• Temporal trend analysis is essential for predictive maintenance
+• Anomaly score is more informative than count
 
-• Early-stage degradation appears as intermittent anomaly spikes
+• Early degradation appears as intermittent spikes
 
 ### 💡 Why This Project Matters
 
@@ -252,67 +271,52 @@ This project demonstrates how classical vibration diagnostics can be integrated 
 
 ### 📈 Future Improvements
 
-• Multi-channel sensor fusion for improved robustness  
+• Spectral kurtosis & envelope analysis
 
-• Advanced features (spectral kurtosis, envelope, wavelets)  
+• Deep learning (CNN/LSTM)
 
-• Deep learning models (LSTM, CNN) for temporal patterns  
+• Real-time streaming system
 
-• Real-time monitoring and alert system  
+• Remaining Useful Life (RUL) prediction
 
-• Fault classification with labeled data  
-
-• Remaining Useful Life (RUL) prediction  
-
-• Model optimization and benchmarking  
-
-• Simple dashboard for visualization (Streamlit/Flask)
+• Web dashboard (Streamlit)
 
 
 ### Results and plots
-![raw_data](result/plot/raw_data.png)
 
-![FFT plot](result/plot/FFT_plot.png)
+![raw_plot(8ch)](result/plot/raw_plot(8ch).png)
 
-![fftwith_hanning plot](result/plot/fftwith_hanning.png)
+![raw_vs_clean(8ch)](result/plot/raw_vs_clean(8ch).png)
 
-![PSD plot](result/plot/PSD_plot.png)
+![FFT(8ch)](result/plot/FFT(8ch).png)
 
-![PSD_after_FFTplot](result/plot/PSD_after_FFT.png)
+![FFT_with_hanning](result/plot/FFT_with_hanning.png)
 
-![Spectogram plot](result/plot/Spectogram.png)
+![with_vs_withouthann](result/plot/with_vs_withouthann.png)
 
-![anomaly_by_ISO](result/plot/anomaly_by_ISO.png)
+![PSD(8ch)](result/plot/PSD(8ch).png)
 
-![envelope_spectrum](result/plot/envelope_spectrum.png)
+![FFT_vs_PSD(8ch)](result/plot/FFT_vs_PSD(8ch).png)
 
-![envelope_signal](result/plot/envelope_signal.png)
+![STFT(8ch)](result/plot/STFT(8ch).png)
 
-![3_model_plot](result/plot/3_model_plot.png)
+![Anomalygraph](result/plot/Anomalygraph.png)
 
-![anomaly_ovrtm](result/plot/anomaly_ovrtm.png)
+![Envelope(8ch)](result/plot/Envelope(8ch).png)
 
-![anomaly_trend](result/plot/anomaly_trend.png)
+![Anml_by_differentmodels](result/plot/Anml_by_differentmodels.png)
 
-![feature_overtime(rms)](result/plot/feature_overtime(rms).png)
+![Anomaly_over_time](result/plot/Anomaly_over_time.png)
 
-![degradation_trend](result/plot/degradation_trend.png)
+![Anomaly_trend](result/plot/Anomaly_trend.png)
 
+![RMS_overtime](result/plot/RMS_overtime.png)
 
+![Anomalyscore_trend](result/plot/Anomalyscore_trend.png)
 
+![score_with_trend](result/plot/score_with_trend.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
+![Count_vs_score(8ch)](result/plot/Count_vs_score(8ch).png)
 
 
 ### 📁 Repository Structure
