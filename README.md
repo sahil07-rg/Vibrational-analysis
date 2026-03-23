@@ -300,7 +300,10 @@ This project demonstrates how classical vibration diagnostics can be integrated 
   
   ├── results/
   
-  ├── Notebook/
+  ├── Notebook/	
+  
+  ├── Src/
+
   
   
 
