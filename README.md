@@ -284,39 +284,56 @@ This project demonstrates how classical vibration diagnostics can be integrated 
 
 ### Results and plots
 
-![raw_plot(8ch)](result/plot/raw_plot(8ch).png)
 
-![raw_vs_clean(8ch)](result/plot/raw_vs_clean(8ch).png)
+![raw_plot(8ch)](result/raw_plot(8ch).png)
 
-![FFT(8ch)](result/plot/FFT(8ch).png)
 
-![FFT_with_hanning](result/plot/FFT_with_hanning.png)
+![raw_vs_clean(8ch)](result/raw_vs_clean(8ch).png)
 
-![with_vs_withouthann](result/plot/with_vs_withouthann.png)
 
-![PSD(8ch)](result/plot/PSD(8ch).png)
+![FFT(8ch)](result/FFT(8ch).png)
 
-![FFT_vs_PSD(8ch)](result/plot/FFT_vs_PSD(8ch).png)
 
-![STFT(8ch)](result/plot/STFT(8ch).png)
+![FFT_with_hanning](result/FFT_with_hanning.png)
 
-![Anomalygraph](result/plot/Anomalygraph.png)
 
-![Envelope(8ch)](result/plot/Envelope(8ch).png)
+![with_vs_withouthann](result/with_vs_withouthann.png)
 
-![Anml_by_differentmodels](result/plot/Anml_by_differentmodels.png)
 
-![Anomaly_over_time](result/plot/Anomaly_over_time.png)
+![PSD(8ch)](result/PSD(8ch).png)
 
-![Anomaly_trend](result/plot/Anomaly_trend.png)
 
-![RMS_overtime](result/plot/RMS_overtime.png)
+![FFT_vs_PSD(8ch)](result/FFT_vs_PSD(8ch).png)
 
-![Anomalyscore_trend](result/plot/Anomalyscore_trend.png)
 
-![score_with_trend](result/plot/score_with_trend.png)
+![STFT(8ch)](result/STFT(8ch).png)
 
-![Count_vs_score(8ch)](result/plot/Count_vs_score(8ch).png)
+
+![Anomalygraph](result/Anomalygraph.png)
+
+
+![Envelope(8ch)](result/Envelope(8ch).png)
+
+
+![Anml_by_differentmodels](result/Anml_by_differentmodels.png)
+
+
+![Anomaly_over_time](result/Anomaly_over_time.png)
+
+
+![Anomaly_trend](result/nomaly_trend.png)
+
+
+![RMS_overtime](result/RMS_overtime.png)
+
+
+![Anomalyscore_trend](result/Anomalyscore_trend.png)
+
+
+![score_with_trend](result/score_with_trend.png)
+
+
+![Count_vs_score(8ch)](result/Count_vs_score(8ch).png)
 
 
 ### 📁 Repository Structure
