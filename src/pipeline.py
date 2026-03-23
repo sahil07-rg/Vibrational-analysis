@@ -1,4 +1,3 @@
-import os
 Fs = 20480
 folder_path = "/filedata" # we have created one folder named "filedata" locally which consists of 38 files.
 
