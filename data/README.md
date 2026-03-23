@@ -2,7 +2,7 @@
 
 This project uses the NASA Bearing Dataset.
 
-Due to size limitations, very milited datset in uploaded.
+Due to size limitations, very limited datset is uploaded.
 
 You can download it from:
 https://www.kaggle.com/datasets/vinayak123tyagi/bearing-dataset
