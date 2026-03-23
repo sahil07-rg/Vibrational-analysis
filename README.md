@@ -342,6 +342,8 @@ This project demonstrates how classical vibration diagnostics can be integrated 
 
 	pip install -r requirements.txt
 
+### IMP: Modify the data's file and folder path accordingly then use it.
+
 
 ### 🔐 License
 
