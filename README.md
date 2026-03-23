@@ -266,6 +266,13 @@ This project demonstrates how classical vibration diagnostics can be integrated 
 
 • Simple dashboard for visualization (Streamlit/Flask)
 
+### ⚡ Quick Demo
+
+	from src.pipeline import run_pipeline
+	
+	results = run_pipeline("data/")
+	print(results)
+
 ### Results and plots
 ![raw_data](result/plot/raw_data.png)
 
