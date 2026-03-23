@@ -1,4 +1,6 @@
-# Vibration-Based Anomaly Detection for Gas Turbine Health Monitoring
+# Ensemble Anomaly Detection for Vibration-Based Predictive Maintenance
+
+🚀 Multi-model ML + Signal Processing for Gas Turbine Health Monitoring
 
 ## 🔬 Project Overview
 
@@ -6,6 +8,12 @@ This project implements an end-to-end vibration signal processing and anomaly de
 
 The system architecture reflects methodologies used in aerospace propulsion diagnostics, where fault-labelled datasets are scarce and condition-based monitoring is critical. The pipeline is inspired by real-world engineering workflows applicable to gas turbine systems such as those developed at GTRE.
 
+## 💡 Why This Project Matters
+
+• Detects early-stage faults in rotating machinery  
+• Works without labeled data (unsupervised learning)  
+• Combines multiple ML models for reliability  
+• Inspired by real aerospace diagnostic systems (GTRE/DRDO)
 
 ## 🎯 Problem Statement
 
@@ -32,7 +40,13 @@ Step 3: Time & Frequency Domain Feature Extraction
 
 Step 4: Feature Vector Aggregation → Feature Matrix (X)
 
-Step 5: Unsupervised Anomaly Detection Model
+Step 5: Feature Matrix Construction
+
+Step 6: Multi-Model Anomaly Detection
+
+Step 7: Ensemble Decision
+
+Step 8: Degradation Trend Analysis
 
 
 ## ⚙️ Technical Pipeline
@@ -122,9 +136,55 @@ Conceptual methods explored:-
 
 •	Reconstruction-based (Autoencoder) principles
 
+### 🤖 Multi-Model Anomaly Detection
+
+Three complementary unsupervised models are used:
+
+• Isolation Forest → detects statistical outliers
+
+• One-Class SVM → detects boundary deviations
+
+• Autoencoder → detects reconstruction anomalies
+
 ### Core assumption:
 
 Healthy engine behavior forms a cluster in feature space. Deviations from this cluster indicate potential anomalies.
+
+### 🧠 Ensemble Strategy
+
+Instead of relying on a single model, a consensus-based approach is used:
+
+	combined = (iso_labels == -1) + (svm_labels == -1) + (ae_labels == -1)
+
+
+A segment is considered anomalous if:
+
+
+	≥ 2 models agree
+
+
+This improves:
+
+• Detection reliability
+
+• Robustness
+
+• Reduction of false positives
+
+### 📈 Degradation Trend Analysis
+
+Anomaly scores are tracked across multiple time-series files:
+
+	File Index → Anomaly Score → Trend
+
+This enables:
+
+• Detection of early-stage degradation
+
+• Monitoring system stability
+
+• Identifying onset of faults
+
 
 ### 📊 Key Contributions
 
@@ -152,6 +212,30 @@ Healthy engine behavior forms a cluster in feature space. Deviations from this c
 
 •	Signal Processing (FFT, PSD, STFT)
 
+•   TensorFlow (Autoencoder)
+
+### 🧠 Key Insights
+
+• Single-model anomaly detection is unreliable
+
+• Ensemble learning improves robustness and consistency
+
+• Weighted anomaly scoring is more informative than simple counts
+
+• Temporal trend analysis is essential for predictive maintenance
+
+• Early-stage degradation appears as intermittent anomaly spikes
+
+### 💡 Why This Project Matters
+
+• Detects faults without labeled data (real-world scenario)
+
+• Applicable to aerospace propulsion systems
+
+• Bridges signal processing with machine learning
+
+• Provides interpretable degradation indicators
+
 ### 🧠 Aerospace Relevance
 
 Gas turbine propulsion systems require:
@@ -166,17 +250,21 @@ This project demonstrates how classical vibration diagnostics can be integrated 
 
 ### 📈 Future Improvements
 
-•	Multi-channel sensor fusion
+• Multi-channel sensor fusion for improved robustness  
 
-•	Envelope analysis for bearing diagnostics
+• Advanced features (spectral kurtosis, envelope, wavelets)  
 
-•	Spectral kurtosis implementation
+• Deep learning models (LSTM, CNN) for temporal patterns  
 
-•	Autoencoder-based anomaly detection
+• Real-time monitoring and alert system  
 
-•	Real-time streaming implementation
+• Fault classification with labeled data  
 
-•	Remaining Useful Life (RUL) modeling
+• Remaining Useful Life (RUL) prediction  
+
+• Model optimization and benchmarking  
+
+• Simple dashboard for visualization (Streamlit/Flask)
 
 ### Results and plots
 ![raw_data](result/plot/raw_data.png)
