@@ -1,20 +1,144 @@
-# Ensemble Anomaly Detection for Vibration-Based Predictive Maintenance
+<div align="center">
 
-🚀 Multi-Channel Signal Fusion + Adaptive ML for Gas Turbine Health Monitoring
+<img src="https://capsule-render.vercel.app/api?type=rect&height=180&text=Ensemble%20Anomaly%20Detection&desc=Predictive%20Maintenance%20for%20Gas%20Turbine%20Health%20Monitoring&descAlign=50&descAlignY=68&fontSize=30&fontColor=ffffff&descSize=16&color=0:141E30,100:243B55" width="100%" />
 
-## 🔬 Project Overview
+# ⚙️ Ensemble Anomaly Detection for Vibration-Based Predictive Maintenance
+
+### 🚀 Multi-Channel Signal Fusion + Adaptive ML for Gas Turbine Health Monitoring
+
+<p>
+
+<img src="https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+
+<img src="https://img.shields.io/badge/Domain-Predictive%20Maintenance-2E8B57?style=for-the-badge" />
+
+<img src="https://img.shields.io/badge/ML-Unsupervised%20Learning-FF8C00?style=for-the-badge" />
+
+<img src="https://img.shields.io/badge/Application-Aerospace%20Diagnostics-B22222?style=for-the-badge" />
+
+</p>
+
+<p>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1000&center=true&vCenter=true&width=780&lines=Gas+Turbine+Condition+Monitoring;Adaptive+Weighted+Ensemble+Detection;Signal+Processing+for+Predictive+Maintenance;Multi-Channel+Vibration+Analytics" />
+
+</p>
+
+</div>
+
+---
+
+<div align="center">
+
+<table>
+<tr>
+
+<td align="center" width="25%">
+
+### ⚙️ Domain
+Predictive Maintenance  
+Rotating Machinery
+
+</td>
+
+<td align="center" width="25%">
+
+### 📡 Sensors
+8-Channel Vibration  
+Signal Monitoring
+
+</td>
+
+<td align="center" width="25%">
+
+### 🤖 Models
+IF · SVM · AE  
+Ensemble Learning
+
+</td>
+
+<td align="center" width="25%">
+
+### 🛰️ Application
+Gas Turbine  
+Health Monitoring
+
+</td>
+
+</tr>
+</table>
+
+</div>
+
+## 🧠 Project Overview
 
 This project presents an end-to-end vibration signal processing and anomaly detection framework for predictive maintenance of rotating machinery, particularly gas turbine systems.
 
-The system transforms high-frequency multi-channel vibration signals into structured feature representations and applies unsupervised machine learning to detect early-stage faults without requiring labeled data.
+The system transforms high-frequency vibration signals into structured feature representations and applies unsupervised learning to detect early-stage faults without requiring labeled data.
 
-Unlike conventional approaches, this work introduces:
+Unlike conventional approaches, this framework introduces:
 
-•	Multi-channel sensor fusion
+- Multi-channel sensor fusion  
 
-•	Adaptive weighted ensemble anomaly detection
+- Adaptive weighted ensemble anomaly detection  
 
-•	Continuous anomaly scoring for degradation analysis
+- Continuous anomaly scoring for degradation monitoring  
+
+---
+
+<div align="center">
+
+<table>
+
+<tr>
+
+<td align="center" width="25%">
+
+### ⚙️ Domain
+
+Predictive Maintenance  
+
+Rotating Machinery
+
+</td>
+
+<td align="center" width="25%">
+
+### 📡 Sensors
+
+8-Channel Vibration  
+
+Signal Monitoring
+
+</td>
+
+<td align="center" width="25%">
+
+### 🤖 Models
+
+IF · SVM · AE  
+
+Ensemble Learning
+
+</td>
+
+<td align="center" width="25%">
+
+### 🛰️ Application
+
+Gas Turbine  
+
+Health Monitoring
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+---
 
 ## 💡 Why This Project Matters
 
@@ -420,13 +544,40 @@ The proposed **ENS (Ensemble)** model achieved the highest **ROC-AUC score (0.56
 This project is intended for academic and research purposes.
 
 
-### 👨‍💻 Author
+## 👨‍💻 Author
 
-Sahil Kumar
+<div align="center">
 
-B.E. Robotics and Artificial Intelligence
+<img src="https://img.shields.io/badge/Author-Sahil%20Kumar-blueviolet?style=for-the-badge" />
 
-Sir M. Visvesvaraya Institute of Technology, Bengaluru
+<br><br>
+
+<table>
+<tr>
+<td align="center" width="500">
+
+### 🧑‍🎓 Sahil Kumar  
+**Robotics & Artificial Intelligence Student**  
+Sir M. Visvesvaraya Institute of Technology  
+Bengaluru, India  
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<p align="center">
+  <a href="https://github.com/sahil07-rg">
+    <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github" />
+  </a>
+  
+  <a href="https://www.linkedin.com/in/sahil-kumar-21a7aa316/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" />
+  </a>
+</p>
+
+</div>
 
 
 
